@@ -11,18 +11,20 @@ public class PayrollCalculator {
         String name = input.nextLine();
 
         System.out.print("How many hours have you worked? ");
-        float hoursWorked = input.nextFloat();
+        double hoursWorked = input.nextFloat();
 
         System.out.print("What is your hourly pay rate? ");
-        float payRate = input.nextFloat();
+        double payRate = input.nextFloat();
 
-        float grossPay;
+        double grossPay;
         if (hoursWorked > 40) {
             grossPay = (40 * payRate) + (hoursWorked - 40) * (payRate * 1.5f);
         } else {
             grossPay = hoursWorked * payRate;
         }
         System.out.println("Employee " + name + " has made a total of $" + grossPay);
+
+        input.close();
 
     }
 }
